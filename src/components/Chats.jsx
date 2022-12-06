@@ -1,5 +1,6 @@
 import React from 'react'
 import Chatheader from '../subcomponents/Chatheader'
+import Keyboard from '../subcomponents/Keyboard'
 
 function Chats() {
   return (
@@ -9,7 +10,9 @@ function Chats() {
         <Chatheader/>
         </div>
         {/* chat body */}
-        <div className='pt-16 pb-4 max-h-[600px] overflow-y-scroll'>  
+        {/* instead of padding cant we take margin bcz there are its taking 
+        padding according to content */}
+        <div className='text-slate-300 pt-16 pb-20 max-h-[600px] overflow-y-scroll'>  
         <p>Hello1</p>   
         <p>Hello</p>  
         <p>Hello</p>  
@@ -53,7 +56,9 @@ function Chats() {
         <p>Hello33</p>  
         </div>
         {/* chat type */}
-        <div className='absolute bottom-0 z-10 bg-orange-500 w-full'>  Keyboard</div>
+        <div className='absolute bottom-0 z-10 bg-orange-500 w-full'> 
+        <Keyboard/>
+        </div>
     </div>
   )
 }

@@ -27,7 +27,19 @@ function Contactlogs() {
   { name:"friendz group", msg:"how was the day?", time:"1:25pm", 
   img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"},
   { name:"Nikhat", msg:"whats the time for session", time:"4:36pm",
-  img:"https://pps.whatsapp.net/v/t61.24694-24/311715089_113057051507378_8629449852421915821_n.jpg?ccb=11-4&oh=01_AdQxOQX1cjeiHQ2V5bWcba_imxURgKgRI-HB9P9yOssOkg&oe=639A910E"}
+  img:"https://pps.whatsapp.net/v/t61.24694-24/311715089_113057051507378_8629449852421915821_n.jpg?ccb=11-4&oh=01_AdQxOQX1cjeiHQ2V5bWcba_imxURgKgRI-HB9P9yOssOkg&oe=639A910E"},
+  { name:"Nikhat", msg:"whats the time for session", time:"4:36pm",
+  img:"https://pps.whatsapp.net/v/t61.24694-24/311715089_113057051507378_8629449852421915821_n.jpg?ccb=11-4&oh=01_AdQxOQX1cjeiHQ2V5bWcba_imxURgKgRI-HB9P9yOssOkg&oe=639A910E"},
+  { name:"Nikhat", msg:"whats the time for session", time:"4:36pm",
+  img:"https://pps.whatsapp.net/v/t61.24694-24/311715089_113057051507378_8629449852421915821_n.jpg?ccb=11-4&oh=01_AdQxOQX1cjeiHQ2V5bWcba_imxURgKgRI-HB9P9yOssOkg&oe=639A910E"},
+  { name:"Nikhat", msg:"whats the time for session", time:"4:36pm",
+  img:"https://pps.whatsapp.net/v/t61.24694-24/311715089_113057051507378_8629449852421915821_n.jpg?ccb=11-4&oh=01_AdQxOQX1cjeiHQ2V5bWcba_imxURgKgRI-HB9P9yOssOkg&oe=639A910E"},
+  { name:"Nikhat", msg:"whats the time for session", time:"4:36pm",
+  img:"https://pps.whatsapp.net/v/t61.24694-24/311715089_113057051507378_8629449852421915821_n.jpg?ccb=11-4&oh=01_AdQxOQX1cjeiHQ2V5bWcba_imxURgKgRI-HB9P9yOssOkg&oe=639A910E"},
+  { name:"friendz group", msg:"how was the day?", time:"1:25pm", 
+  img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"},
+  { name:"friendz group", msg:"how was the day?", time:"1:25pm", 
+  img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"}
 ]
   return (
     <div className='bg-grey-900 h-screen'>
@@ -48,7 +60,7 @@ function Contactlogs() {
         <div className='flex mx-2 my-2 text-lg text-slate-300 space-x-2 justify-between items-center'>
           <div className='bg-slate-600  space-x-2 px-2 items-center rounded-lg w-full'>
             <SearchIcon fontSize='inherit'/>
-            <input className='bg-transparent text-xs' type={Search} name="search" placeholder="Search or Start new chat"/>
+            <input className='bg-transparent text-xs p-2 h-[15px] w-[190px] items-center' type={Search} name="search" placeholder="Search or Start new chat"/>
           </div>
           <div>
             <KeyboardDoubleArrowDownIcon  fontSize='inherit'/>
@@ -56,7 +68,10 @@ function Contactlogs() {
         </div>
 
         {/* contact chat logs */}
-        <div className='mt-4 overflow-y-scroll'>
+        {/* instead of padding cant we take margin bcz there are its taking 
+        padding according to content */}
+        
+        <div className="mt-4 max-h-[700px] pb-[280px] scrollbar scrollbar-thin overflow-y-scroll">
         {
           contactArray.map((item,index)=>
           <Contactchatcards key={index} name={item.name} msg={item.msg} 
