@@ -8,7 +8,7 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import Search from '@mui/icons-material/Search';
 import Contactchatcards from './Contactchatcards';
 
-function Contactlogs() {
+function Contactlogs(props) {
 
   const contactArray = [{name:"Sadia", msg:"Yes we can", time:"8:36pm",
   img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"},
@@ -41,6 +41,11 @@ function Contactlogs() {
   { name:"friendz group", msg:"how was the day?", time:"1:25pm", 
   img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"}
 ]
+
+
+function xyz(x){
+    props.setContact(x);
+}
   return (
     <div className='bg-grey-900 h-screen'>
       {/* 1st contact header section */}
@@ -72,10 +77,16 @@ function Contactlogs() {
         padding according to content */}
         
         <div className="mt-4 max-h-[700px] pb-[280px] scrollbar-thumb-white scrollbar-track-blue-200 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-scroll">
-        {
+        {/* {
           contactArray.map((item,index)=>
           <Contactchatcards key={index} name={item.name} msg={item.msg} 
           time={item.time} img={item.img}/>)
+          } */}
+
+          {/*  */}
+          {
+             contactArray.map((item,index)=><button onClick={()=>xyz(item)} key={index} className="w-full"><Contactchatcards key={index} name={item.name} msg={item.msg} 
+             time={item.time} img={item.img}/></button>)
           }
 
         </div>
