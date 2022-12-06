@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contactchatcards(props) {
   return (
-    <div className='hover:bg-slate-900 flex border-t border-slate-700 justify-between px-4 py-2'>
+    <div className='hover:bg-slate-700 hover:cursor-pointer flex border-t border-slate-700 justify-between px-4 py-2'>
         {/* dp and msg with name */}
         <div className='group-hover:cursor-pointer group-hover:text flex space-x-2'>
             {/* dp */}

@@ -71,7 +71,7 @@ function Contactlogs() {
         {/* instead of padding cant we take margin bcz there are its taking 
         padding according to content */}
         
-        <div className="mt-4 max-h-[700px] pb-[280px] scrollbar scrollbar-thin overflow-y-scroll">
+        <div className="mt-4 max-h-[700px] pb-[280px] scrollbar-thumb-white scrollbar-track-blue-200 scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded-full overflow-y-scroll">
         {
           contactArray.map((item,index)=>
           <Contactchatcards key={index} name={item.name} msg={item.msg} 
