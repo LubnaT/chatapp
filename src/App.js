@@ -1,12 +1,14 @@
-import Homescreen from './screens/Homescreen';
+// import Homescreen from './screens/Homescreen';
+
 import './App.css';
+import Classscreen from './screens/Classscreen';
 
 function App() {
   return  (
     <div>
     {/* // HomeScreen */}
-    <Homescreen/>
-
+    {/* <Homescreen/> */}
+              <Classscreen/>
     {/* // login */}
     {/* <Login/>/ */}
     </div>

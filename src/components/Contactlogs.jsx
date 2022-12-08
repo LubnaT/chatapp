@@ -42,7 +42,8 @@ function Contactlogs(props) {
   img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"}
 ]
 
-
+//passing setContact attribute from parent component to child component through props
+// this functn xyz is calling setcontact through props which has setActive fntn
 function xyz(x){
     props.setContact(x);
 }
@@ -83,7 +84,7 @@ function xyz(x){
           time={item.time} img={item.img}/>)
           } */}
 
-          {/*  */}
+          {/* making contact card as button so when we click on it its person infntn shous be displayed */}
           {
              contactArray.map((item,index)=><button onClick={()=>xyz(item)} key={index} className="w-full"><Contactchatcards key={index} name={item.name} msg={item.msg} 
              time={item.time} img={item.img}/></button>)
