@@ -24,9 +24,9 @@ function Homescreen() {
 
          {/* chats */}
          
-        {/* <Chats/> */}
+        {active ? <Chats p1={active}/> : ""}
         {/* if active has information then pass it to chat component or make it null */}
-        {active ? <Chats p1={active} />  : ""}
+        
         
 
     </div>

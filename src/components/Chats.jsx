@@ -1,6 +1,8 @@
 import React from 'react'
 import Chatheader from '../subcomponents/Chatheader'
-import Keyboard from '../subcomponents/Keyboard'
+import Chatscroll from '../subcomponents/Chatscroll'
+import Msgtypeinput from '../subcomponents/Msgtypeinput'
+
 
 function Chats(props) {
   return (
@@ -12,52 +14,12 @@ function Chats(props) {
         {/* chat body */}
         {/* instead of padding cant we take margin bcz there are its taking 
         padding according to content */}
-        <div className='text-white pt-16 pb-20 max-h-[600px] scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-white scrollbar-track-blue-200 scrollbar-thin overflow-y-scroll'>  
-        <p>Hello1</p>   
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello0</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello</p>  
-        <p>Hello33</p>  
+        <div className='h-screen banner overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-white scrollbar-track-blue-200 scrollbar-thin'>  
+           <Chatscroll/>
         </div>
         {/* chat type */}
         <div className='absolute bottom-0 z-10 bg-orange-500 w-full'> 
-        <Keyboard/>
+        <Msgtypeinput/>
         </div>
     </div>
   )

@@ -4,7 +4,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 function Chatheader(props) {
   return (
-    <div className='flex justify-between items-center px-4 py-2  h-[50px] bg-slate-700'>
+    <div className='flex justify-between items-center px-4 py-2  h-[48px] bg-slate-700'>
           <div className='flex space-x-2 items-center'> 
             <img className='h-8 w-8 rounded-full' src={props.p2?.img} alt=''/>
             <div>

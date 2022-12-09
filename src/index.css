@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.banner{
+    background-image: url('https://wallpapers.com/images/hd/stars-universe-space-lfppsiiloswp46ae.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
