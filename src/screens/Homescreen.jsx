@@ -18,14 +18,14 @@ function Homescreen() {
 
        
         {/* Contactlogs */}
-    
+              {/* passing setter function setActive to setContact attribute */}
         <Contactlogs setContact={setActive}/>
         
 
          {/* chats */}
          
         {active ? <Chats p1={active}/> : ""}
-        {/* if active has information then pass it to chat component or make it null */}
+        {/* ternary operator : if active has information then pass it to chat component or make it null */}
         
         
 

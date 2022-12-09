@@ -9,6 +9,8 @@ function Chats(props) {
     <div className=' col-span-3 relative h-screen  '>
         {/*Header */}
         <div className='absolute z-10 top-0 bg-neutral-400 w-full'> 
+        {/* getting p1 attribute value from parent homescreen to child chat through props and
+        passing to p2 attribute of Chat header */}
         <Chatheader p2={props.p1}/>
         </div>
         {/* chat body */}
