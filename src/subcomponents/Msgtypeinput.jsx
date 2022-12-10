@@ -7,6 +7,19 @@ import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 function Msgtypeinput() {
    // console.log(props.msgSetter)
 
+   const schema = {
+    uid : `arfat1234` ,
+    myMessage : "",
+  }
+  const [text , setText] = useState(schema)
+
+  function handleChange(event){
+    console.log(event)
+    const {value} = event.target ;
+    setText({uid : `12345` , myMessage : value})
+    
+
+  }
   return (
     <div className='p-2  space-x-2 bg-slate-700 '>
         <InsertEmoticonIcon/>
