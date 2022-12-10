@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function Message(props){
 return (
    <div className=''>
@@ -18,9 +19,10 @@ return (
 function Chatscroll() {
 
   return (
-    <div>
-      <div className='text-white w-full h-full py-16 px-8 space-y-4 justify-end flex flex-col'>
-        {/* messages sent by me nd other */}
+    <div  className=' flex flex-col h-full '>
+      <div className='text-white w-full h-full py-16 px-8 justify-end flex flex-col'>
+        <div className=' h-[30rem] space-y-3 justify-items-start'>
+           {/* messages sent by me nd other */}
         {/* Message component attribute text is msg and me is whether msg is sent by me or others */}
         <Message text="Hi" me={true}/>
         <Message text="How r u??" me={true}/>
@@ -49,6 +51,9 @@ function Chatscroll() {
        
         {/* empty div for giving space to msg from bottom */}
         <div className='h-16'> </div>
+
+        </div>
+       
     </div>
 
     </div>
