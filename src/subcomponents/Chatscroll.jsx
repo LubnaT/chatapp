@@ -20,8 +20,8 @@ function Chatscroll() {
 
   return (
     <div  className=' flex flex-col h-full '>
-      <div className='text-white w-full h-full py-16 px-8 justify-end flex flex-col'>
-        <div className=' h-[30rem] space-y-3 justify-items-start'>
+      <div className='text-white w-full h-full py-16 px-8 justify-end  flex flex-col'>
+        <div className=' h-[30rem] space-y-3'>
            {/* messages sent by me nd other */}
         {/* Message component attribute text is msg and me is whether msg is sent by me or others */}
         <Message text="Hi" me={true}/>
@@ -48,6 +48,7 @@ function Chatscroll() {
         <Message text="Good" me={true}/>
         <Message text="how is was the day?" me={true}/>
         <Message text="nice" me={false}/>
+       
        
         {/* empty div for giving space to msg from bottom */}
         <div className='h-16'> </div>

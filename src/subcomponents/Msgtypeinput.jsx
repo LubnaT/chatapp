@@ -3,6 +3,7 @@ import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import Search from '@mui/icons-material/Search';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
+import { useState } from 'react';
 
 function Msgtypeinput() {
    // console.log(props.msgSetter)
@@ -29,7 +30,8 @@ function Msgtypeinput() {
         value={text.myMessage}
         onChange={handleChange}
         placeholder="Type a Message"
-        className='bg-slate-600 rounded-md pl-2 text-xs w-[720px] h-[25px] shadow-2xl' type={Search} name="search" placeholder="Type a message"/>
+        className='bg-slate-600 rounded-md pl-2 text-xs w-[720px] h-[25px] shadow-2xl' 
+        type={Search}  />
         <KeyboardVoiceIcon/>
     </div>
   )
