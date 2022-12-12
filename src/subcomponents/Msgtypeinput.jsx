@@ -26,7 +26,9 @@ function Msgtypeinput() {
         <InsertEmoticonIcon/>
         <AttachFileIcon className='rotate-45'/>
         <input 
+          // name should be same as myMessage key which stores messages
         name="myMessage"
+        // text is setter variable which is whatever key we are typing is passed to myMessage key
         value={text.myMessage}
         onChange={handleChange}
         placeholder="Type a Message"
