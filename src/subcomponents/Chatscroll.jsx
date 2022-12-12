@@ -21,7 +21,7 @@ function Chatscroll() {
   return (
     <div  className=' flex flex-col h-full '>
       <div className='text-white w-full h-full py-16 px-8 justify-end  flex flex-col'>
-        <div className=' h-[30rem] space-y-3'>
+        <div className=' h-[1rem] space-y-3'>
            {/* messages sent by me nd other */}
         {/* Message component attribute text is msg and me is whether msg is sent by me or others */}
         <Message text="Hi" me={true}/>
