@@ -25,9 +25,10 @@ function Msgtypeinput() {
     // uid to know user log in nd sending msg is same 
     // this fntn display msg with uid
     setText({uid : `12345` , myMessage : value})
-    
 
   }
+
+  
   return (
     <div className='p-2  space-x-2 bg-slate-700 '>
         <InsertEmoticonIcon/>
