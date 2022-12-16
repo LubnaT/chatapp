@@ -13,14 +13,15 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
 
-function signup(){
-  signInWithPopup(auth, provider)
+async function signup(){
+  await signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
 
     const data = result.user;
     setlogin(data);
   }).catch((error) => {
+    setlogin(null)
     console.log(error)
   });
 
