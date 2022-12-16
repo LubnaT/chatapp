@@ -32,9 +32,18 @@ console.log(user)
 
 
 
-function xyz(){
+async function xyz(){
 
+  let prom = new Promise(function (Add){
+    Add(2+3)
+  })
+
+  await prom.then(function(r){
+    console.log(r)
+  })
 }
+
+console.log(xyz())
 
 
 
