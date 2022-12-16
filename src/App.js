@@ -1,6 +1,6 @@
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import Homescreen from './screens/Homescreen';
-import app from '../firebase'
+import app from './firebase'
 import Loginpage from './screens/Loginpage';
 import { useState } from 'react';
 import './App.css';
@@ -30,6 +30,11 @@ async function signup(){
 
 console.log(user)
 
+
+
+function xyz(){
+
+}
 
 
 
