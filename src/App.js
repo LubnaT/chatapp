@@ -4,6 +4,7 @@ import app from './firebase'
 import Loginpage from './screens/Loginpage';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Loder from "./subcomponents/Loder";
 // import Classscreen from './screens/Classscreen';
 
 function App() {
@@ -46,6 +47,14 @@ useEffect(()=>{
   });
 },[user])
 
+
+const [load,setload] = useState(true)
+
+setTimeout(function(){
+ setload(false)
+},5000)
+
+if(load) return <Loder/>
 
 console.log(user)
 
