@@ -2,8 +2,9 @@ import { getAuth, GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 import Homescreen from './screens/Homescreen';
 import app from './firebase'
 import Loginpage from './screens/Loginpage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { setUserId } from "firebase/analytics";
 // import Classscreen from './screens/Classscreen';
 
 function App() {
@@ -26,6 +27,25 @@ async function signup(){
   });
 
 }
+
+
+async function signOut(){
+ await signOut(auth).then(()=>{}).catch(()=>{})
+}
+
+useEffect(()=>{
+  onAuthStateChanged(auth, (u) => {
+    if (u) {
+      setUserId(u)
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+     
+    } else {
+      // User is signed out
+      setUserId(null)
+    }
+  });
+},[user])
 
 
 console.log(user)
@@ -53,7 +73,7 @@ console.log(xyz())
     <div>
     {/* // HomeScreen */}
    {/* {user ? <Homescreen/> : <Loginpage login={setlogin}/>}  */}
-   {user ? <Homescreen/> : <Loginpage login={signup}/>} 
+   {user ? <Homescreen user={user} logout={signOut}/> : <Loginpage login={signup}/>} 
  
               {/* <Classscreen/> */}
     {/* // login */}

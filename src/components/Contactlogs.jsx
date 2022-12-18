@@ -2,6 +2,7 @@ import React from 'react'
 import GroupsIcon from '@mui/icons-material/Groups';
 import ReplayIcon from '@mui/icons-material/Replay';
 import MessageIcon from '@mui/icons-material/Message';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
@@ -58,6 +59,7 @@ function xyz(x){
                  <GroupsIcon/>
                  <ReplayIcon/>
                  <MessageIcon/>
+               <button className=''>  <PowerSettingsNewIcon/></button>
                  <MoreVertIcon/>
             </div>
         </div>
