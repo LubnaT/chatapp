@@ -4,7 +4,6 @@ import app from './firebase'
 import Loginpage from './screens/Loginpage';
 import { useEffect, useState } from 'react';
 import './App.css';
-import { setUserId } from "firebase/analytics";
 // import Classscreen from './screens/Classscreen';
 
 function App() {
@@ -36,13 +35,13 @@ async function signOut(){
 useEffect(()=>{
   onAuthStateChanged(auth, (u) => {
     if (u) {
-      setUserId(u)
+      setlogin(u)
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
      
     } else {
       // User is signed out
-      setUserId(null)
+      setlogin(null)
     }
   });
 },[user])
