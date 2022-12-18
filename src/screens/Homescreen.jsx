@@ -19,7 +19,7 @@ function Homescreen(user,logout) {
        
         {/* Contactlogs */}
               {/* passing setter function setActive to setContact attribute */}
-        <Contactlogs setContact={setActive}/>
+        <Contactlogs user={user} logout={logout} setContact={setActive}/>
         
 
          {/* chats */}
