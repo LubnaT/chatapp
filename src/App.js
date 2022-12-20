@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider,signInWithPopup,onAuthStateChanged } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,signOut,signInWithPopup,onAuthStateChanged, RecaptchaVerifier } from "firebase/auth";
 import Homescreen from './screens/Homescreen';
 import app from './firebase'
 import Loginpage from './screens/Loginpage';
@@ -10,8 +10,26 @@ import Loder from "./subcomponents/Loder";
 function App() {
 const [user,setlogin]= useState(false);
 
+
+
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+
+
+auth.languageCode = 'it';
+// To apply the default browser preference instead of explicitly setting it.
+// firebase.auth().useDeviceLanguage();
+
+window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
+  'size': 'invisible',
+  'callback': (response) => {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    onSignInSubmit();
+  }
+}, auth);
+
+window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
+const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
 
 
 async function signup(){
