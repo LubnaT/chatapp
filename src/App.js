@@ -29,8 +29,8 @@ async function signup(){
 }
 
 
-async function signOut(){
- await signOut(auth).then(()=>{}).catch(()=>{})
+async function SignOut(){
+ await signOut(auth).then(()=>{console.log("errr")}).catch(()=>{console.log("error")})
 }
 
 useEffect(()=>{
@@ -81,7 +81,7 @@ console.log(xyz())
     <div>
     {/* // HomeScreen */}
    {/* {user ? <Homescreen/> : <Loginpage login={setlogin}/>}  */}
-   {user ? <Homescreen user={user} logout={signOut}/> : <Loginpage login={signup}/>} 
+   {user ? <Homescreen user={user} logout={SignOut}/> : <Loginpage login={signup}/>} 
  
               {/* <Classscreen/> */}
     {/* // login */}

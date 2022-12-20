@@ -48,6 +48,7 @@ function Contactlogs(user,logout, ...props) {
 function xyz(x){
     props.setContact(x);
 }
+console.log(logout)
   return (
     <div className='bg-grey-900 h-screen border-r-2 border-slate-600'>
       {/* 1st contact header section */}
@@ -59,7 +60,7 @@ function xyz(x){
                  <GroupsIcon/>
                  <ReplayIcon/>
                  <MessageIcon/>
-               <button onClick={()=>logout()} className=''>  <PowerSettingsNewIcon/></button>
+               <button onClick={()=>logout} className=''>  <PowerSettingsNewIcon/></button>
                  <MoreVertIcon/>
             </div>
         </div>
