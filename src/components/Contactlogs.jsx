@@ -9,7 +9,7 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import Search from '@mui/icons-material/Search';
 import Contactchatcards from './Contactchatcards';
 
-function Contactlogs(user,logout, ...props) {
+function Contactlogs({user,logout, ...props}) {
 
   const contactArray = [{name:"Sadia", msg:"Yes we can", time:"8:36pm",
   img:"https://pps.whatsapp.net/v/t61.24694-24/307300479_1178698296410595_3436634533088903287_n.jpg?ccb=11-4&oh=01_AdR_yctPFr67JngOYM8diZ8TxDeZpSIVYy1kFlhIPz8HYQ&oe=639A6A60"},
@@ -60,7 +60,7 @@ console.log(logout)
                  <GroupsIcon/>
                  <ReplayIcon/>
                  <MessageIcon/>
-               <button onClick={()=>logout} className=''>  <PowerSettingsNewIcon/></button>
+               <button onClick={()=>logout()} className=''>  <PowerSettingsNewIcon/></button>
                  <MoreVertIcon/>
             </div>
         </div>

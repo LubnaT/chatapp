@@ -4,7 +4,9 @@ import Contactlogs from '../components/Contactlogs'
 // import usestate from react whenever use it
 import {useState} from 'react'
 
-function Homescreen(user,logout) {
+function Homescreen({user,logout}) {
+
+  console.log(logout)
 
   // using usestate hook and passing default value as null
   // setactive fntn is passed through setcontact attribute to its child attribute contactlogs
@@ -20,6 +22,7 @@ function Homescreen(user,logout) {
         {/* Contactlogs */}
               {/* passing setter function setActive to setContact attribute */}
         <Contactlogs user={user} logout={logout} setContact={setActive}/>
+        
         
 
          {/* chats */}
