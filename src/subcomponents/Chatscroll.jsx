@@ -46,8 +46,6 @@ function Chatscroll() {
         <Message text="iam fine" me={false}/>
         <Message text="what about u?" me={false}/>
         <Message text="Good" me={true}/>
-        <Message text="how is was the day?" me={true}/>
-        <Message text="nice" me={false}/>
        
        
         {/* empty div for giving space to msg from bottom */}
