@@ -15,7 +15,7 @@ function Loginpage(props) {
         <div className=" pt-10">
             <p className="text-2xl font-medium text-gray-700 mb-4">Log in</p>
             <div className=" flex space-x-3 w-[250px]">
-                <button onClick={()=> props.login(true)} className=" flex items-center space-x-1 px-4 border py-[6px] w-1/2 justify-center rounded-md">
+                <button onClick={()=> props.login()} className=" flex items-center space-x-1 px-4 border py-[6px] w-1/2 justify-center rounded-md">
                     <img alt="google-oauth2" className=" h-5 w-5" src="//heathmont.imgix.net/bitcasino/images/google-oauth2.svg?auto=compress,format" loading="lazy" />
                         <span>Google</span>
                 </button>
