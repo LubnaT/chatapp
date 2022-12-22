@@ -9,6 +9,7 @@ import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrow
 import Search from '@mui/icons-material/Search';
 import Contactchatcards from './Contactchatcards';
 import { collection, getDocs } from "firebase/firestore";
+import { useState,useEffect } from 'react';
 
 function Contactlogs({user,db,logout, ...props}) {
 
@@ -113,7 +114,7 @@ console.log(logout)
             //  time={item.time} img={item.img}/></button>)
             contactArray.filter(item => item.uid !== user.uid)
             .map((item)=><button onClick={()=>xyz(item)} key={item.uid} className="w-full">
-            <Contactchatcards key={index} name={item.displayName} img={item.photoURL}/></button>)
+            <Contactchatcards  name={item.displayName} img={item.photoURL}/></button>)
           }
 
         </div>

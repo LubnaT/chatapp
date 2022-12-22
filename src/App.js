@@ -1,4 +1,4 @@
-import { getAuth, GoogleAuthProvider,signOut,signInWithPopup,onAuthStateChanged, RecaptchaVerifier } from "firebase/auth";
+import { getAuth, GoogleAuthProvider,signOut,signInWithPopup,onAuthStateChanged, } from "firebase/auth";
 import { getFirestore, doc, getDoc ,setDoc  } from "firebase/firestore";
 import Homescreen from './screens/Homescreen';
 import app from './firebase'
