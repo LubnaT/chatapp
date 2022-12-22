@@ -45,7 +45,7 @@ function Contactlogs({user,db,logout, ...props}) {
 // ]
 
 
-const [ContactArray ,setContactArray] = useState([]) ;
+const [contactArray ,setContactArray] = useState([]) ;
 
 useEffect(()=>{
   if(!user) return ;
@@ -111,8 +111,9 @@ console.log(logout)
           {
             //  contactArray.map((item,index)=><button onClick={()=>xyz(item)} key={index} className="w-full"><Contactchatcards key={index} name={item.name} msg={item.msg} 
             //  time={item.time} img={item.img}/></button>)
-            contactArray.filter(item => item.uid !== user.uid).map((item,index)=><button onClick={()=>xyz(item)} key={index} className="w-full"><Contactchatcards key={index} name={item.name} msg={item.msg} 
-             time={item.time} img={item.img}/></button>)
+            contactArray.filter(item => item.uid !== user.uid)
+            .map((item)=><button onClick={()=>xyz(item)} key={item.uid} className="w-full">
+            <Contactchatcards key={index} name={item.displayName} img={item.photoURL}/></button>)
           }
 
         </div>
