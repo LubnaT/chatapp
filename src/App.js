@@ -9,7 +9,7 @@ import Loder from "./subcomponents/Loder";
 // import Classscreen from './screens/Classscreen';
 
 function App() {
-const [user,setlogin]= useState(false);
+const [user,setUser]= useState(false);
 
 
 
@@ -19,20 +19,20 @@ const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 
 
-auth.languageCode = 'it';
-// To apply the default browser preference instead of explicitly setting it.
-// firebase.auth().useDeviceLanguage();
+// auth.languageCode = 'it';
+// // To apply the default browser preference instead of explicitly setting it.
+// // firebase.auth().useDeviceLanguage();
 
-window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
-  'size': 'invisible',
-  'callback': (response) => {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    onSignInSubmit();
-  }
-}, auth);
+// window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
+//   'size': 'invisible',
+//   'callback': (response) => {
+//     // reCAPTCHA solved, allow signInWithPhoneNumber.
+//     onSignInSubmit();
+//   }
+// }, auth);
 
-window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
-const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
+// window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
+// const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
 
 
 useEffect(()=>{
@@ -58,7 +58,7 @@ async function signup(){
     const {displayName ,email ,photoURL ,uid} = result.user ;
     setUser({"displayName":displayName ,"email" :email ,"photoURL" :photoURL ,"uid" :uid}) ;
   }).catch((error) => {
-    setlogin(null)
+    setUser(null)
     console.log(error)
   });
 
@@ -79,7 +79,7 @@ useEffect(()=>{
      
     } else {
       // User is signed out
-      setlogin(null)
+      setUser(null)
     }
   });
 },[user])

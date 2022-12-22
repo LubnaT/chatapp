@@ -2,6 +2,7 @@ import React from 'react'
 import Chatheader from '../subcomponents/Chatheader'
 import Chatscroll from '../subcomponents/Chatscroll'
 import Msgtypeinput from '../subcomponents/Msgtypeinput'
+import { useState } from 'react'
 
 
 function Chats(props) {
