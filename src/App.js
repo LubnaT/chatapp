@@ -1,4 +1,5 @@
 import { getAuth, GoogleAuthProvider,signOut,signInWithPopup,onAuthStateChanged, RecaptchaVerifier } from "firebase/auth";
+import { getFirestore, doc, getDoc ,setDoc  } from "firebase/firestore";
 import Homescreen from './screens/Homescreen';
 import app from './firebase'
 import Loginpage from './screens/Loginpage';
@@ -14,6 +15,8 @@ const [user,setlogin]= useState(false);
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
 
 
 auth.languageCode = 'it';
@@ -32,13 +35,28 @@ window.recaptchaVerifier = new RecaptchaVerifier('recaptcha-container', {}, auth
 const recaptchaResponse = grecaptcha.getResponse(recaptchaWidgetId);
 
 
+useEffect(()=>{
+  if (!user) return ;
+  checkNewLogin();
+},[user])
+
+async function checkNewLogin(){
+  const docRef = doc(db, "users", user?.uid);
+  const docSnap = await getDoc(docRef);
+
+if (!docSnap.exists()) {
+  await setDoc(doc(db, "users", user?.uid), user);   
+}
+}
+
+
 async function signup(){
   await signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
 
-    const data = result.user;
-    setlogin(data);
+    const {displayName ,email ,photoURL ,uid} = result.user ;
+    setUser({"displayName":displayName ,"email" :email ,"photoURL" :photoURL ,"uid" :uid}) ;
   }).catch((error) => {
     setlogin(null)
     console.log(error)
@@ -54,7 +72,8 @@ async function SignOut(){
 useEffect(()=>{
   onAuthStateChanged(auth, (u) => {
     if (u) {
-      setlogin(u)
+      const {displayName ,email ,photoURL ,uid} = u ;
+      setUser({"displayName":displayName ,"email" :email ,"photoURL" :photoURL ,"uid" :uid}) ;
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
      
@@ -99,7 +118,7 @@ console.log(xyz())
     <div>
     {/* // HomeScreen */}
    {/* {user ? <Homescreen/> : <Loginpage login={setlogin}/>}  */}
-   {user ? <Homescreen user={user} logout={SignOut}/> : <Loginpage login={signup}/>} 
+   {user ? <Homescreen user={user} db={db} logout={SignOut}/> : <Loginpage login={signup}/>} 
  
               {/* <Classscreen/> */}
     {/* // login */}

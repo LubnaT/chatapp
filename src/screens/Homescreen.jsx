@@ -4,7 +4,7 @@ import Contactlogs from '../components/Contactlogs'
 // import usestate from react whenever use it
 import {useState} from 'react'
 
-function Homescreen({user,logout}) {
+function Homescreen({user,db,logout}) {
 
   console.log(logout)
 
@@ -21,13 +21,13 @@ function Homescreen({user,logout}) {
        
         {/* Contactlogs */}
               {/* passing setter function setActive to setContact attribute */}
-        <Contactlogs user={user} logout={logout} setContact={setActive}/>
+        <Contactlogs user={user} db={db} logout={logout} setContact={setActive}/>
         
         
 
          {/* chats */}
          
-        {active ? <Chats p1={active}/> : ""}
+        {active ? <Chats db={db} p1={active}/> : ""}
         {/* ternary operator : if active has information then pass it to chat component or make it null */}
         
         
