@@ -5,7 +5,7 @@ import Msgtypeinput from '../subcomponents/Msgtypeinput'
 import { useState } from 'react'
 
 
-function Chats(props) {
+function Chats({db,user ,...props}) {
   const [messageArray ,setMessageArray] = useState([]) ;
   return (
     <div className=' col-span-3 relative h-screen  '>
@@ -19,11 +19,11 @@ function Chats(props) {
         {/* instead of padding cant we take margin bcz there are its taking 
         padding according to content */}
         <div className='h-screen banner overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full scrollbar-thumb-white scrollbar-track-blue-200 scrollbar-thin'>  
-           <Chatscroll  message={messageArray}/>
+           <Chatscroll  user={user} db={db} message={messageArray}/>
         </div>
         {/* chat type */}
         <div className='absolute bottom-0 z-10 bg-orange-500 w-full'> 
-        <Msgtypeinput msgSetter={setMessageArray}/>
+        <Msgtypeinput  user={user} db={db} msgSetter={setMessageArray}/>
         </div>
     </div>
   )

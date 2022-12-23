@@ -93,23 +93,23 @@ setTimeout(function(){
 
 if(load) return <Loder/>
 
-console.log(user)
+// console.log(user)
 
 
 
-async function xyz(){
+// async function xyz(){
 
   
-  let prom = new Promise(function (Add){
-    Add(2+3)
-  })
+//   let prom = new Promise(function (Add){
+//     Add(2+3)
+//   })
 
-  await prom.then(function(r){
-    console.log(r)
-  })
-}
+//   await prom.then(function(r){
+//     // console.log(r)
+//   })
+// }
 
-console.log(xyz())
+// // console.log(xyz())
 
 
 

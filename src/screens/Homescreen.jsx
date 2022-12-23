@@ -4,9 +4,10 @@ import Contactlogs from '../components/Contactlogs'
 // import usestate from react whenever use it
 import {useState} from 'react'
 
+
 function Homescreen({user,db,logout}) {
 
-  console.log(logout)
+  // console.log(logout)
 
   // using usestate hook and passing default value as null
   // setactive fntn is passed through setcontact attribute to its child attribute contactlogs
@@ -27,7 +28,10 @@ function Homescreen({user,db,logout}) {
 
          {/* chats */}
          
-        {active ? <Chats db={db} p1={active}/> : ""}
+        {active ? <Chats user={user} db={db} p1={active}/> : 
+        <div className=' flex justify-center items-center col-span-3 w-full'>   
+        <p className=' font-black text-7xl text-gray-400'>welcome</p>
+        </div>}
         {/* ternary operator : if active has information then pass it to chat component or make it null */}
         
         
