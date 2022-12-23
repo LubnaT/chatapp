@@ -6,9 +6,9 @@ function Chatheader(props) {
   return (
     <div className='flex justify-between items-center px-4 py-2  h-[48px] bg-slate-700'>
           <div className='flex space-x-2 items-center'> 
-            <img className='h-8 w-8 rounded-full' src={props.p2?.img} alt=''/>
+            <img className='h-8 w-8 rounded-full' src={props.p2?.photoURL} alt=''/>
             <div>
-            <p className=' text-slate-200 text-lg font-semibold'>{props.p2?.name}</p>
+            <p className=' text-slate-200 text-lg font-semibold'>{props.p2?.displayName}</p>
             <p className=' text-slate-200 text-xs'>last time seen 2 min ago</p>
 
             </div>
