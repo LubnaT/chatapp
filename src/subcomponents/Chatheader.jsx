@@ -8,7 +8,7 @@ function Chatheader(props) {
           <div className='flex space-x-2 items-center'> 
             <img className='h-8 w-8 rounded-full' src={props.p2?.photoURL} alt=''/>
             <div>
-            <p className=' text-slate-200 text-lg font-semibold'>{props.p2?.displayName}</p>
+            <p className=' text-slate-200 text-md font-semibold'>{props.p2?.displayName}</p>
             <p className=' text-slate-200 text-xs'>last time seen 2 min ago</p>
 
             </div>

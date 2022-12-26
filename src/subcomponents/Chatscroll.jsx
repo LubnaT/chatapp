@@ -38,7 +38,7 @@ console.log(messages)
   return (
     <div  className=' flex flex-col h-full '>
       <div className='text-white w-full  py-16 px-8 justify-end  flex flex-col'>
-        <div className=' h-[45rem] space-y-3'>
+        <div className=' h-[45rem] xl:h-[50rem] space-y-3'>
            {/* messages sent by me nd other */}
         {/* Message component attribute text is msg and me is whether msg is sent by me or others */}
         {/* <Message text="Hi" me={true}/> */}
